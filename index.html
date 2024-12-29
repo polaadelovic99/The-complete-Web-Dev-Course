@@ -1,78 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flex Direction</title>
-  <!-- HINT:
-  https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors
-  https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators 
-  -->
+  <title>Flexbox Pricing Table</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sono:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    .container {
+    body {
+      font-family: "Sono", sans-serif;
+    }
+
+    .pricing-container {
       display: flex;
-      flex-direction: column;
-    }
-  </style>
-  <style>
-    .container {
-      color: white;
-      border: 5px solid gold;
-      display: inline-flex;
-      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-wrap: wrap;
     }
 
-    .container>* {
-      flex-basis: 100px;
+    .pricing-plan {
+      background-color: #eee;
+      padding: 20px;
+      border-radius: 5px;
+      width: 300px;
     }
 
-    /*
-Select all the elements that are the direct
-children of the .container class.
-    */
-
-    .red {
-      background-color: #eb4d4b;
+    .plan-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 10px auto;
+      text-align: center;
     }
 
-    .orange {
-      background-color: #f0932b;
+    .plan-price {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
     }
 
-    .yellow {
-      background-color: #f6e58d;
+    .plan-features {
+      list-style: none;
+      text-align: center;
+      line-height: 2;
     }
 
-    .green {
-      background-color: #6ab04c;
+    .plan-button {
+      background-color: black;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      margin: 0px auto;
+      display: block;
     }
 
-    .blue {
-      background-color: #4834d4;
-    }
+    /* Hint: What can you do with a media query and flexbox? */
+    @media (max-width: 950px) {
+      .pricing-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-    .indigo {
-      background-color: #30336b;
-    }
-
-    .purple {
-      background-color: #be2edd;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="red">Red</div>
-    <div class="orange">Orange</div>
-    <div class="yellow">Yellow</div>
-    <div class="green">Green</div>
-    <div class="blue">Blue</div>
-    <div class="indigo">Indigo</div>
-    <div class="purple">Purple</div>
+  <div class="pricing-container">
+    <div class="pricing-plan">
+      <div class="plan-title">Basic</div>
+      <div class="plan-price">$9.99/month</div>
+      <ul class="plan-features">
+        <li>✅ 10GB Storage</li>
+        <li>✅ 1 User</li>
+        <li>🚫 Support</li>
+      </ul>
+      <button class="plan-button">Sign Up</button>
+    </div>
+    <div class="pricing-plan">
+      <div class="plan-title">Standard</div>
+      <div class="plan-price">$19.99/month</div>
+      <ul class="plan-features">
+        <li>✅ 50GB Storage</li>
+        <li>✅ 5 Users</li>
+        <li>✅ Phone &amp; Email Support</li>
+      </ul>
+      <button class="plan-button">Sign Up</button>
+    </div>
+    <div class="pricing-plan">
+      <div class="plan-title">Premium</div>
+      <div class="plan-price">$49.99/month</div>
+      <ul class="plan-features">
+        <li>✅ 100GB Storage</li>
+        <li>✅ 10 Users</li>
+        <li>✅ 24/7 Support</li>
+      </ul>
+      <button class="plan-button">Sign Up</button>
+    </div>
   </div>
-
 </body>
 
 </html>
